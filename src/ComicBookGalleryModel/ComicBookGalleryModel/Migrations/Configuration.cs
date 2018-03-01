@@ -28,6 +28,8 @@ namespace ComicBookGalleryModel.Migrations
             //    );
             //
 
+//Preprocessor Directive excluding below seed data when not in debug
+#if DEBUG
             const int roleIdScript = 1;
             const int roleIdPencils = 2;
 
@@ -108,6 +110,7 @@ namespace ComicBookGalleryModel.Migrations
                 cb => cb.Id,
                 comicBook3
             );
+#endif
         }
     }
 }
