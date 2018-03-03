@@ -1,6 +1,6 @@
 namespace ComicBookGalleryModel.Migrations
 {
-    using Models;
+    using ComicBookGalleryModel.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -15,16 +15,30 @@ namespace ComicBookGalleryModel.Migrations
 
         protected override void Seed(ComicBookGalleryModel.Data.Context context)
         {
-            const int roleIdScript = 1;
-            const int roleIdPencils = 2;
+            //  This method will be called after migrating to the latest version.
 
-            context.Roles.AddOrUpdate(
-                r => r.Id,
-                new Role() { Id = roleIdScript, Name = "Script" },
-                new Role() { Id = roleIdPencils, Name = "Pencils" }
-            );
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
 
+//Preprocessor Directive excluding below seed data when not in debug
 //#if DEBUG
+//            const int roleIdScript = 1;
+//            const int roleIdPencils = 2;
+
+//            context.Roles.AddOrUpdate(
+//                r => r.Id,
+//                new Role() { Id = roleIdScript, Name = "Script" },
+//                new Role() { Id = roleIdPencils, Name = "Pencils" }
+//            );
+
 //            const int artistIdStanLee = 1;
 //            const int artistIdSteveDitko = 2;
 
